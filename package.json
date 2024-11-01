@@ -1,0 +1,27 @@
+{
+  "name": "spotify-cli",
+  "version": "1.0.0",
+  "description": "connect terminal with spotify",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "spotify_node": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node src/cli_input/index.js"
+  },
+  "keywords": [
+    "spotify",
+    "cli"
+  ],
+  "author": "CesarQuint",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "inquirer": "^12.0.1",
+    "install": "^0.13.0",
+    "nodemon": "^3.1.7",
+    "npm": "^10.9.0"
+  }
+}
