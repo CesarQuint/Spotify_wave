@@ -1,27 +1,33 @@
 {
   "name": "spotify-cli",
   "version": "1.0.0",
-  "description": "connect terminal with spotify",
-  "main": "index.js",
-  "type": "module",
+  "description": "Connect terminal with Spotify",
+  "main": "src/bin/cli.js",
   "bin": {
-    "spotify_node": "./bin/cli.js"
+    "spotify_wave": "./src/bin/cli.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "@inquirer/prompts": "^7.0.1",
+    "axios": "^1.7.7",
+    "commander": "^12.1.0",
+    "date-fns": "^4.1.0",
+    "inquirer": "^12.0.1",
+    "install": "^0.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.8.6",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node src/cli_input/index.js"
+    "start": "node src/bin/cli.js"
   },
   "keywords": [
     "spotify",
     "cli"
   ],
   "author": "CesarQuint",
-  "license": "ISC",
-  "dependencies": {
-    "commander": "^12.1.0",
-    "inquirer": "^12.0.1",
-    "install": "^0.13.0",
-    "nodemon": "^3.1.7",
-    "npm": "^10.9.0"
-  }
+  "license": "ISC"
 }
