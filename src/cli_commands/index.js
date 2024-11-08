@@ -1,24 +1,12 @@
-import inquirer from "inquirer";
+import { input } from "@inquirer/prompts";
+import { SpotifyWaveCli } from "../service/spotifyWave.cli.js";
 
-async function authenticate() {
-  const questions = [
-    {
-      type: "input",
-      name: "username",
-      message: "Please enter your Spotify username:",
-    },
-    {
-      type: "password",
-      name: "password",
-      message: "Please enter your Spotify password:",
-      mask: "*", // This hides the password input
-    },
-  ];
-
-  const answers = await inquirer.prompt(questions);
-  console.log(`Username: ${answers.username}`);
-  // Here you can handle the authentication logic, e.g., sending the credentials to your Spotify API
+export async function authenticate() {
+  const answers = {
+    username: await input({ message: "Please enter your Spotify username:" }),
+    tokenA: await input({ message: "Please enter your ClientId:" }),
+    tokenB: await input({ message: "Please enter your ClientSecret:" }),
+  };
+  const service = new SpotifyWaveCli();
+  service.logIn(answers.username, answers.tokenA, answers.tokenB);
 }
-
-// Export the authenticate function
-export default authenticate;
