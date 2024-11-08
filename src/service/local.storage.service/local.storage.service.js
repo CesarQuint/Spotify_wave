@@ -42,6 +42,7 @@ export class LocalStorageService {
       const data = await fs.readFile(tokenFilePath, "utf8");
       return JSON.parse(data);
     } catch (err) {
+      console.log(err);
       return null;
     }
   };
