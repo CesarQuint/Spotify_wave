@@ -11,7 +11,7 @@ export class Session {
     this.userData = null;
   }
   verifier() {
-    if (Boolean(this.userData))
+    if (this.userData)
       throw new Error("There's already a session please logout");
   }
   async auth(userName, cliendId, clientSecret) {
